@@ -1,4 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+$primary:#112240; // Light Navy
+$secondary:#64ffda;// Green
+$success: #233554; // Lightest Navy
+$info:#8892b0; // Slate or gray
+$warning: #a8b2d1; // Light Slate
+$danger: #ccd6f6; // Lightest Slate
+$light:#e6f1ff; // White
+$dark: #0a192f; //Navy
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+
 * {
   margin: 0;
   padding: 0;
