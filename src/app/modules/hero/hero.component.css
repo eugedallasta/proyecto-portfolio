@@ -1,0 +1,21 @@
+.photo{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border-color: aliceblue;
+    border: 0.25rem solid;
+}
+
+.photo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+@media (min-width: 767px) {
+    .photo{
+        height: 190px;
+        width: 190px;
+    }
+}

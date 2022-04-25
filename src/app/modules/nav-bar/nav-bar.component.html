@@ -1,0 +1,36 @@
+<header class="bg-dark text-white py-3 mb-4 
+    d-flex flex-column flex-wrap align-items-center justify-content-center
+    flex-md-row justify-content-md-between"
+>
+      
+      <a href="/" class="col-md-auto ms-md-1 mx-auto">
+        <img src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1648503444/APLogo-20-20.png" 
+        alt="Logo" 
+        width="180" 
+        height="auto" 
+        role="img"
+        >
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2  mb-md-0 justify-content-center">
+        <li><a href="https://github.com/eugedallasta" class="nav-link px-2 link-secondary" target="_blank"><i class="fab fa-github fa-2x"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/eugenia-dallasta" class="nav-link px-2 link-secondary" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></li>
+        <li><a href="https://www.instagram.com/eugedallasta/?hl=en" class="nav-link px-2 link-secondary" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></li>
+
+        <li><button  class="nav-link px-2 link-secondary bg-dark border-0" (click)="openSnackBar('Drop me a message anytime at +34600480519','X')"><i class="fab fa-whatsapp fa-2x"></i></button></li>
+
+        <li><button class="nav-link px-2 link-secondary bg-dark border-0" (click)="openSnackBar('mariaedallasta@gmail.com','X')"><i class="far fa-envelope fa-2x"></i></button></li>
+
+        <div class="ms-3">
+          <button 
+          type="button" 
+          class="btn btn-outline-secondary  me-2"
+          data-bs-toggle="modal" data-bs-target="#exampleModal"
+          ><i class="fas fa-user"></i> Login
+          </button>
+          <app-login></app-login>
+        </div>
+      </ul>
+      
+    
+    </header>
