@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/modules/education/education.component.scss"
+    ],
+    "names": [],
+    "file": "education.component.css"
+}

@@ -1,7 +1,7 @@
 $primary:#112240; // Light Navy
-$secondary:#64ffda;// Green
+$secondary:#69dec3;// Green
 $success: #233554; // Lightest Navy
-$info:#8892b0; // Slate or gray
+$info:#797d89; // Slate or gray
 $warning: #a8b2d1; // Light Slate
 $danger: #ccd6f6; // Lightest Slate
 $light:#e6f1ff; // White
@@ -17,12 +17,9 @@ $theme-colors: (
   "light":      $light,
   "dark":       $dark
 );
-@import "./node_modules/bootstrap/scss/bootstrap.scss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "~bootstrap/scss/bootstrap";
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
