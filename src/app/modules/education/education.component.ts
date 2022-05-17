@@ -27,4 +27,8 @@ export class EducationComponent implements OnInit {
       },
     });
   }
+
+  public onOpenModal(mode:String, education?:Educacion):void{
+    console.log('onOpenModal', mode, education);
+  }
 }
