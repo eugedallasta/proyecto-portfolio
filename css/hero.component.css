@@ -1,0 +1,6 @@
+.photo { height: 150px; width: 150px; border-radius: 50%; border-color: aliceblue; border: 0.25rem solid; }
+
+.photo-container { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+@media (min-width: 767px) { .photo { height: 190px; width: 190px; } }
+/*# sourceMappingURL=hero.component.css.map */
