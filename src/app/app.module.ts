@@ -6,12 +6,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-  
+
   ],
   imports: [
     BrowserModule,
@@ -20,8 +21,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserAnimationsModule,
     MatSnackBarModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
+    AppRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

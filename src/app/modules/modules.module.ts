@@ -8,7 +8,8 @@ import { ExperienceComponent } from './experience/experience.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
 import { FooterComponent } from './footer/footer.component';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ExperienceCreateComponent } from './experience-create/experience-create.component';
 
 
 
@@ -22,10 +23,13 @@ import { FooterComponent } from './footer/footer.component';
     ExperienceComponent,
     ProjectsComponent,
     SkillsComponent,
-    FooterComponent
+    FooterComponent,
+    ExperienceCreateComponent,
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [NavBarComponent,
     LoginComponent,

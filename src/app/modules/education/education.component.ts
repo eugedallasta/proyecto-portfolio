@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Educacion } from 'src/app/models/educacion';
 import { EducationService } from 'src/app/services/education.service';
 
@@ -9,7 +10,10 @@ import { EducationService } from 'src/app/services/education.service';
   styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent implements OnInit {
+
   public education: Educacion[] = [];
+  public editEducation: Educacion | undefined;
+  public deleteEducation: Educacion | undefined;
 
   constructor(private educationService: EducationService) {}
 
@@ -21,6 +25,9 @@ export class EducationComponent implements OnInit {
     this.educationService.getEducation().subscribe({
       next: (response: Educacion[]) => {
         this.education = response;
+        console.log(this.education);
+        console.log(response);
+
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
@@ -29,6 +36,65 @@ export class EducationComponent implements OnInit {
   }
 
   public onOpenModal(mode:String, education?:Educacion):void{
-    console.log('onOpenModal', mode, education);
+    const container = document.getElementById('main-container');
+    const button = document.createElement('button');
+    button.style.display = 'none';
+    button.setAttribute('data-toggle', 'modal');
+    if(mode === 'add'){
+      button.setAttribute('data-target', '#addEducationModal');
+    }else if(mode === 'delete'){
+      this.deleteEducation = education;
+      button.setAttribute('data-target', '#deleteEducationModal');
+    }else if(mode === 'edit'){
+      this.editEducation = education;
+      button.setAttribute('data-target', '#editEducationModal');
+    }
+    container?.appendChild(button);
+    button.click();
   }
+  public onAddEducation(addForm:NgForm){
+    document.getElementById('add-education-form')?.click();
+    this.educationService.addEducation(addForm.value).subscribe({
+      next: (response: Educacion) => {
+        console.log(response);
+        this.getEducation();
+        addForm.reset();
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+        addForm.reset();
+      }
+    });
+  }
+
+  public onUpdateEducation(education:Educacion){
+    this.editEducation = education;
+    document.getElementById('edit-education-form')?.click();
+    this.educationService.updateEducation(education).subscribe({
+      next: (response: Educacion) => {
+        console.log(response);
+        this.getEducation();
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    });
+  }
+
+  public onDeleteEducation(idEdu:number):void{
+    this.educationService.deleteEducation(idEdu).subscribe({
+      next: (response: void) => {
+        console.log(response);
+        this.getEducation();
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    });
+  }
+
+
+
+
+
 }
